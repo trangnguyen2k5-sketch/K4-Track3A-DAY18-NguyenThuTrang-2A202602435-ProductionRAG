@@ -7,6 +7,13 @@ load_dotenv()
 
 # --- API Keys ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+
+# --- Gemini models (gemini-1.5-flash / embedding-001 đã bị Google ngừng hỗ trợ) ---
+GEMINI_MODEL = "gemini/gemini-3.1-flash-lite"             # litellm format
+GEMINI_EMBEDDING_MODEL = "models/gemini-embedding-001"
+# Free tier: 15 requests/phút/model → giữ dưới mức đó để tránh lỗi 429
+GEMINI_RPM = 12
 
 # --- Qdrant ---
 QDRANT_HOST = "localhost"
